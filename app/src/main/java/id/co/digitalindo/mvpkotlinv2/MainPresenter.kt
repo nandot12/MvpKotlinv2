@@ -8,15 +8,19 @@ import id.co.digitalindo.mvpkotlinv2.model.Hasilmodel
  */
 class MainPresenter : BasePresenter<MainView> {
 
-
+//TODO 1 deklrasi
     var modelview : MainView? = null
 
+    //TODO 2 klik kanan -> generate-> secondary contrucktor
     constructor(model: MainView?) {
         this.modelview = model
     }
 
+    //TODO 3 buat function sendiri
+
     fun hitung(satu : String,dua : String){
 
+        //TODO 4 kondisional
         if(satu.isNotEmpty() && dua.isNotEmpty()){
 
             val nilai1 = satu.toDouble()
@@ -25,12 +29,16 @@ class MainPresenter : BasePresenter<MainView> {
             val model = Hasilmodel(hasil.toString())
 
 
+            //TODO 5 masukkan k view
             modelview?.success(model)
         }
         else{
+            //TODO 6 response ke view kalau string kososng
             modelview?.error()
         }
     }
+
+
 
     override fun onAttach(view: MainView) {
         modelview = view
